@@ -19,13 +19,18 @@ const HomeScreen: React.FC= () => {
   useEffect(() => {
     // Fetch the current session on component mount
     const fetchSession = async () => {
+      try {
         const session = supabase.auth.session();
         setUser(session?.user || null);
-      if (Error()) {
-        console.error("Error fetching session:", Error().message);
+      } catch (error) {
+        if (error instanceof Error) {
+          console.error("Error fetching session:", error.message);
+        } else {
+          console.error("Error fetching session:", error);
+        }
       }
-      setUser(session?.user || null);
     };
+    
 
     fetchSession();
 
