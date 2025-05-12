@@ -3,13 +3,10 @@ import Auth from "../LeonCoins/src/components/Auth";
 import AppNavigator from "./src/navigation/AppNavigator";
 import HomeScreen from "./src/screens/HomeScreen";
 import { StyleSheet, View } from "react-native";
+import TrackMoreScreen from "./src/screens/TrackMoreScreen";
 
 const App = () => {
-  return <View style={styles.container}>
-    <HomeScreen />;
-    </View>
-
-  
+  return <AppNavigator />;
 };
 
 export default App;

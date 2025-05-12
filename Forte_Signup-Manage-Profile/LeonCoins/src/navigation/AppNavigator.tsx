@@ -2,12 +2,11 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import HomeScreen from "../screens/HomeScreen";
-import Manage from "../components/Manage";
+import TrackMoreScreen from "../screens/TrackMoreScreen";
 
 export type RootStackParamList = {
   Home: undefined;
-  Profile: { userId?: string };
-  Choices: undefined;
+  TrackMore: undefined;
 };
 
 const Stack = createStackNavigator<RootStackParamList>();
@@ -19,7 +18,12 @@ const AppNavigator: React.FC = () => {
                 <Stack.Screen 
                     name="Home" 
                     component={HomeScreen} 
-                    options={{ title: 'what' }} 
+                    options={{ headerShown: false }} 
+                />
+                <Stack.Screen
+                    name="TrackMore" 
+                    component={TrackMoreScreen} 
+                    options={{ headerShown: false }}
                 />
             </Stack.Navigator>
         </NavigationContainer>
